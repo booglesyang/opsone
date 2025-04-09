@@ -27,7 +27,8 @@ spec:
             defaultMode: 420
       containers:
         - name: influxdb
-          image: 'registry.cn-hangzhou.aliyuncs.com/opsone/influxdb:1.8.4-alpine'
+          #image: 'registry.cn-hangzhou.aliyuncs.com/opsone/influxdb:1.8.4-alpine'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/influxdb:1.8.4-alpine'
           ports:
             - name: influxdb
               containerPort: 8086
@@ -82,7 +83,8 @@ spec:
             type: DirectoryOrCreate
       containers:
         - name: mysql
-          image: 'registry.cn-hangzhou.aliyuncs.com/opsone/mysql:8.0'
+          #image: 'registry.cn-hangzhou.aliyuncs.com/opsone/mysql:8.0'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/mysql:8.0'
           ports:
             - name: mysql
               containerPort: 3306
@@ -144,7 +146,8 @@ spec:
             defaultMode: 420
       containers:
         - name: nginx
-          image: 'registry.cn-hangzhou.aliyuncs.com/opsone/nginx:1.22.0'
+          #image: 'registry.cn-hangzhou.aliyuncs.com/opsone/nginx:1.22.0'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/nginx:1.22.0'
           ports:
             - containerPort: 80
               protocol: TCP
@@ -209,7 +212,8 @@ spec:
             defaultMode: 420
       containers:
         - name: opsone-server
-          image: 'registry.cn-beijing.aliyuncs.com/opsone/opsone-server:v4.5'
+          #image: 'registry.cn-beijing.aliyuncs.com/opsone/opsone-server:v4.5'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/opsone-server:v4.5'
           command:
             - /app/opsone/opsone-server
           resources:
@@ -283,7 +287,8 @@ spec:
             type: ''
       containers:
         - name: opsone-web
-          image: 'registry.cn-beijing.aliyuncs.com/opsone/opsone-web:v4.5'
+          #image: 'registry.cn-beijing.aliyuncs.com/opsone/opsone-web:v4.5'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/opsone-web:v4.5'
           resources:
             limits:
               cpu: 100m
@@ -343,7 +348,8 @@ spec:
           emptyDir: {}
       containers:
         - name: redis
-          image: 'registry.cn-hangzhou.aliyuncs.com/opsone/redis:latest'
+          #image: 'registry.cn-hangzhou.aliyuncs.com/opsone/redis:latest'
+          image: 'registry.cn-hangzhou.aliyuncs.com/iboogles/redis:latest'
           ports:
             - containerPort: 6379
               protocol: TCP
